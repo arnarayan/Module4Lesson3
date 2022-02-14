@@ -36,11 +36,14 @@ struct ContentView: View {
             VStack {
                 Text("This tab's tag is \(tabIndex)")
                 Text("This is delete operation")
+                List(1..<101) {index in
+                    Text("\(String(index)) - This is tab 3!")
+                }
             }
             .tabItem {
                 VStack {
-                    Image(systemName: "trash.circle.fill")
-                    Text("delete")
+                    Image(systemName: "hands.clap")
+                    Text("Tab 3")
                 }
             }.tag(2)
         }
