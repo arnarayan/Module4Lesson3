@@ -7,10 +7,33 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    @State var tabIndex: Int = 2
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView(selection: $tabIndex){
+            Text("Hello world").tabItem {
+                VStack {
+                    Image(systemName: "pencil")
+                    Text("Edit")
+                }
+            }.tag(0)
+            Text("Hello world2").tabItem {
+                VStack {
+                    Image(systemName: "heart")
+                    Text("save")
+                }
+            }.tag(1)
+            Text("This is delete operation").tabItem {
+                VStack {
+                    Image(systemName: "trash.circle.fill")
+                    Text("delete")
+                }
+            }.tag(2)
+        }
+
+        
     }
 }
 
